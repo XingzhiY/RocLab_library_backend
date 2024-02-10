@@ -1,0 +1,28 @@
+{
+  "name": "roclab_library_backend",
+  "version": "1.0.0",
+  "description": "a demo of library management system for RocLab interview",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XingzhiY/RocLab_library_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XingzhiY/RocLab_library_backend/issues"
+  },
+  "homepage": "https://github.com/XingzhiY/RocLab_library_backend#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.1",
+    "nodemon": "^3.0.3"
+  }
+}
