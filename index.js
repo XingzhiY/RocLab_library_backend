@@ -1,24 +1,28 @@
 import express from "express"
-import { PORT,mongoDBURL } from './config.js';
+import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
+import router from "./routes/booksRoute.js";
 
 const app = express();
+app.use(express.json());
+app.use("/books",router)
+
+app.get('/', (request, response) => {
+    console.log(request);
+    return response.status(234).send('Welcome To Andy\'s library');
+});
 
 
 
-app.listen(PORT,()=>{
-    console.log(`App is l;istening to port: ${PORT}`)
-})
 mongoose
     .connect(mongoDBURL)
-    .then((request,response)=>{
-        console.log('connect to mongoDB successfullly')
+    .then((request, response) => {
+        // console.log('connect to mongoDB successfullly')
+        app.listen(PORT, () => {
+            console.log(`App is l;istening to port: ${PORT}`)
+        })
 
-        app.get('/', (request, response) => {
-            console.log(request);
-            return response.status(234).send('Welcome To MERN Stack Tutorial');
-          });
     })
-    .catch((error)=>{
+    .catch((error) => {
         console.log(error)
     })
